@@ -1,44 +1,32 @@
 import Entry from "./Entry.jsx";
 import Header from "./Header.jsx";
+import data from "./data.js";
 
 function App() {
   return (
     <>
       <Header />
-      <Entry
-        img={{
-          src: "https://scrimba.com/links/travel-journal-japan-image-url",
-          alt: "mount fuji",
-        }}
-        title="Mount Fuji"
-        country="JAPAN"
-        googleMapsUrl="https://www.google.com/maps/place/Mount+Fuji/@35.3606255,138.7273634,15z/data=!3m1!4b1!4m5!3m4!1s0x6019629a42fdc899:0xa6a1fcc916f8e7e!8m2!3d35.3606255!4d138.7273634"
-        date="12 Jan, 2021 - 24 Jan, 2021"
-        text="Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,389 feet). It is an active stratovolcano that last erupted in 1707-1708. Mount Fuji is a popular destination for tourists and climbers, offering stunning views and a unique cultural experience."
-      />
-      <Entry
-        img={{
-          src: "https://upload.wikimedia.org/wikipedia/commons/4/40/Sydney_Opera_House_Sails.jpg",
-          alt: "Sydney Opera House",
-        }}
-        title="Sydney Opera House"
-        country="AUSTRALIA"
-        googleMapsUrl="https://www.google.com/maps/place/Sydney+Opera+House/"
-        date="27 May, 2021 - 8 Jun, 2021"
-        text="The Sydney Opera House is a multi-venue performing arts centre and one of the 20th century's most famous and distinctive buildings."
-      />
+      {data.map((entry) => (
+        <Entry
+          key={entry.id}
+          // 1st approach: passing individual props to Entry component
+          // img={entry.img}
+          // title={entry.title}
+          // country={entry.country}
+          // googleMapsUrl={entry.googleMapsUrl}
+          // date={entry.date}
+          // text={entry.text}
+          // how to reference these props in Entry component? props.img, props.title, props.country, props.googleMapsUrl, props.date, props.text
 
-      <Entry
-        img={{
-          src: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg",
-          alt: "Eiffel Tower",
-        }}
-        title="Eiffel Tower"
-        country="FRANCE"
-        googleMapsUrl="https://www.google.com/maps/place/Eiffel+Tower/"
-        date="10 Aug, 2021 - 18 Aug, 2021"
-        text="The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is one of the most recognizable structures in the world."
-      />
+          // 2nd approach: passing entire object as a prop to Entry component
+          entry={entry}
+          // how to reference these props in Entry component? props.entry.img, props.entry.title, props.entry.country, props.entry.googleMapsUrl, props.entry.date, props.entry.text
+
+          // 3rd approach: using spread operator to pass all properties of the entry object as props to Entry component
+          // {...entry}
+          // how to reference these props in Entry component? props.img, props.title, props.country, props.googleMapsUrl, props.date, props.text
+        />
+      ))}
     </>
   );
 }
