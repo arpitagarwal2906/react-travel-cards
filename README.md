@@ -1,16 +1,56 @@
-# React + Vite
+# React Travel Journal 🌍
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React project that displays travel entries using reusable components and dynamic data rendering.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Reusable `Entry` component
+* Data-driven UI using `.map()`
+* Clean component structure (Header + Entries)
+* Props handling (multiple approaches)
+* Basic styling with CSS
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React (Vite)
+* JavaScript (ES6)
+* CSS
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+ ├── App.jsx
+ ├── Entry.jsx
+ ├── Header.jsx
+ ├── data.js
+ ├── main.jsx
+ └── index.css
+```
+
+## ⚙️ How It Works
+
+* Travel data is stored in `data.js`
+* `.map()` is used to convert data → `<Entry />` components
+* Props are passed using:
+
+  * Individual props
+  * Object prop
+  * Spread operator (`...entry`)
+
+## 🧠 Learnings
+
+* React component structure
+* Props (3 methods)
+* `.map()` for rendering lists
+* Importance of `key` prop
+
+## 📌 Future Improvements
+
+* Add responsive design
+* Add animations
+* Fetch data from API
+
+## 📜 License
+
+Free to use for learning purposes.
