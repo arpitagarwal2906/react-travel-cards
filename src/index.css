@@ -40,12 +40,11 @@ header > h1 {
   object-fit: cover;
 }
 
-span, .marker {
-    margin-right: 10px;
+span,
+.marker {
+  margin-right: 10px;
 }
 
 .entry-description {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
-
